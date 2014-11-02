@@ -1,0 +1,15 @@
+vamsi_application_homepage:
+    path:     /
+    defaults: { _controller: VamsiApplicationBundle:Default:index }
+
+all_containers:
+    path: /containers/all
+    defaults: { _controller: VamsiApplicationBundle:Container:AllContainers }
+
+running_containers:
+    path: /containers/running
+    defaults: { _controller: VamsiApplicationBundle:Container:RunningContainers }
+
+container:
+    path: /containers/{id}
+    defaults: { _controller: VamsiApplicationBundle:Container:IndividualContainer }

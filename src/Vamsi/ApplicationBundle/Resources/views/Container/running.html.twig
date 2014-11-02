@@ -1,0 +1,17 @@
+{% for container in containers %}
+    ID : {{ container.id }}
+    <br/>
+    Image: {{ container.config.Image }}
+    <br/>
+    Command: {{ container.data.Command }}
+    <br/>
+    Created: {{ container.data.Created|date("d/M/Y") }}
+    <br/>
+    Status: {{ container.data.Status }}
+    <br/>
+    <br/>
+
+
+    {{ dump(container) }}
+
+{% endfor %}

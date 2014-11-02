@@ -1,0 +1,65 @@
+{% extends "::base.html.twig" %}
+{% block title %}
+    <title>All Containers</title>
+{% endblock %}
+{% if containers %}
+    {% block body %}
+
+
+        <div id="layout">
+        <a href="#menu" id="menuLink" class="menu-link">
+            <span></span>
+        </a>
+        <div id="menu">
+            <div class="pure-menu pure-menu-open">
+                <a class="pure-menu-heading" href="#">Docker UI</a>
+                <ul>
+                    <li><a href="#">Active Containers</a></li>
+                    <li class="menu-item-divided pure-menu-selected">
+                        <a href="#">All Containers</a>
+                    </li>
+                    <li><a href="#">Images</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="main">
+
+        <div class="header">
+            <h1>All Containers</h1>
+        </div>
+
+        <div class="content">
+
+                <table class="pure-table pure-table-bordered">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Command</th>
+                        <th>Created</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for container in containers %}
+                        <tr>
+                            <td>{{ container.id|slice(0, 12)}}...</td>
+                            <td>{{ container.config.Image }}</td>
+                            <td>{{ container.data.Command }}</td>
+                            <td>{{ container.data.Created|date("d/M/Y") }}</td>
+                            <td>{{ container.data.Status }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+
+
+
+
+
+{% endblock body %}
+
+{% endif %}

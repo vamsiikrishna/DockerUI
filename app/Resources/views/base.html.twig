@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('bundles/vamsiapplication/pure-min.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('bundles/vamsiapplication/side-menu.css') }}"/>
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    {% block title %}
+        <title></title>
+    {% endblock title %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

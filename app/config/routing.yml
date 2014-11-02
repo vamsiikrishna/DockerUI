@@ -1,0 +1,4 @@
+vamsi_application:
+    resource: "@VamsiApplicationBundle/Resources/config/routing.yml"
+    prefix:   /
+
